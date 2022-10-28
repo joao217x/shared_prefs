@@ -30,6 +30,17 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {},
               child: const Text('POST'),
             ),
+            Row(
+              children: [
+                const Text('Modo Offline'),
+                Switch(
+                  value: currenciesStore.isOffline,
+                  onChanged: (value) {
+                    currenciesStore.setOfflineMode(value);
+                  },
+                ),
+              ],
+            )
           ],
         ),
       ),
