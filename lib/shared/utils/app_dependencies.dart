@@ -1,5 +1,5 @@
 import 'package:api_service/features/home/controller/currencies_store.dart';
-import 'package:api_service/features/home/service/currencies_api_service.dart';
+import 'package:api_service/features/home/service/api/currencies_api_service.dart';
 import 'package:api_service/main.dart';
 import 'package:api_service/shared/client/dio_impl.dart';
 import 'package:api_service/shared/client/interface/api_client_interface.dart';
@@ -11,7 +11,7 @@ class AppDependencies {
 
     //Services
     getIt.registerSingleton<CurrenciesApiService>(
-      CurrenciesApiService(dioClient: getIt.get<ApiClientInterface>()),
+      CurrenciesApiService(client: getIt.get<ApiClientInterface>()),
     );
 
     //Stores

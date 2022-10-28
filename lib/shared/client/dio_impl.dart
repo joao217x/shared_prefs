@@ -3,7 +3,7 @@ import 'package:api_service/shared/client/interface/api_client_interface.dart';
 import 'package:dio/dio.dart' as dio;
 
 class DioImplementation implements ApiClientInterface {
-  final dio.Dio client = dio.Dio();
+  final client = dio.Dio();
 
   @override
   Future<ApiResponseInterface> get(
@@ -13,6 +13,6 @@ class DioImplementation implements ApiClientInterface {
   }) async {
     final response = await client.get(path);
 
-    return ApiResponseInterface.fromDioResponse(response);
+    return ApiResponseInterface.fromResponse(response);
   }
 }

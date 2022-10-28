@@ -9,7 +9,7 @@ class ApiResponseInterface {
     required this.data,
   });
 
-  factory ApiResponseInterface.fromDioResponse(dio.Response response) {
+  factory ApiResponseInterface.fromResponse(dio.Response response) {
     return ApiResponseInterface(
       statusCode: response.statusCode,
       data: response.data,
